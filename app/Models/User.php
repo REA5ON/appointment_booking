@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function specialties()
+    {
+        return $this->belongsToMany(Specialty::class, 'user_specialties');
+    }
 }
