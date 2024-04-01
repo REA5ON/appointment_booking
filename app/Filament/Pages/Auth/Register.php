@@ -16,9 +16,24 @@ class Register extends BaseRegister
                         $this->getEmailFormComponent(),
                         $this->getPasswordFormComponent(),
                         $this->getPasswordConfirmationFormComponent(),
+                        $this->getSpecialtyFormComponent(),
                     ])
                     ->statePath('data'),
             ),
         ];
+    }
+
+    protected function getSpecialtyFormComponent(): Component
+    {
+        return Select::make('specialty')
+            ->options([
+                'nails' => 'Nails',
+                'brows' => 'Brows',
+                'hair' => 'Hair',
+                'tattoo' => 'Tattoo',
+                'lips' => 'Lips',
+                'skin' => 'Skin',
+            ])
+            ->required();
     }
 }
